@@ -1,0 +1,34 @@
+//@import "~/normalize.min.css";
+
+// SETTINGS
+@import "settings/_colors";
+@import "settings/_fonts";
+@import "settings/_variables";
+
+// TOOLS
+@import "tools/_mixins";
+@import "tools/_utils";
+
+// GENERICS
+@import "generic/_common";
+@import "generic/_header";
+@import "generic/_footer";
+
+// OBJECTS
+@import "objects/_buttons";
+@import "objects/_inputs";
+@import "objects/_form";
+@import "objects/_layouts";
+@import "objects/_pagination";
+@import "objects/_banner";
+
+// PAGES
+
+// VENDORS
+//@import "vendor/_ionicons";
+@import "vendor/_gdpr";
+@import "vendor/_loading";
+
+// COMPONENTS
+@import "components/_modal";
+@import "components/_animation-delay";

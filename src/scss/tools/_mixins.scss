@@ -1,0 +1,120 @@
+// Font Face
+@mixin font($weight:400, $style: normal) {
+  $font-weight: $weight;
+  $font-style: $style;
+
+  @if (weight== 300) or ($weight == light) {
+    $weight: 1;
+  }
+
+  @if (weight == 400) or ($weight == normal) {
+    $weight: 2;
+  }
+
+  @if (weight == 600) or ($weight == semibold) {
+    $weight: 3;
+  }
+
+  @if (weight == 700) or ($weight == bold) {
+    $weight: 4;
+  }
+
+  font-family: quote($proxima-nova);
+  font-style: $font-style;
+  font-weight: $font-weight;
+}
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin tablet {
+  @include breakpoint($tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @include breakpoint($desktop) {
+    @content;
+  }
+}
+
+@mixin desktop-md {
+  @include breakpoint($desktop-md) {
+    @content;
+  }
+}
+
+@mixin desktop-lg {
+  @include breakpoint($desktop-lg) {
+    @content;
+  }
+}
+
+@mixin maxpoint($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint) - 1}) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpoint) {
+      @content;
+    }
+  }
+}
+
+@mixin max($breakpoint) {
+  @media (max-width: $breakpoint - 1) {
+    @content;
+  }
+}
+
+/*---------------------------------------------------------------*\
+  RESPONSIVE PROPERTY HANDLER
+    handles the per-breakpoint property for mobile-first approach
+
+    note: requires a key-less 'breakpoints' scss map
+          e.g. $breakpoints: ( 320px, 760px, 1080px, 1280px );
+
+    usage:
+      @include respond((
+        display: flex,
+        margin: (2px, 3px, 4px, 5px),
+        padding: (3rem, 4rem, 5rem, 6rem),
+        flex: ("0 1 50%", null, (1 1 100%))
+      ));
+\*---------------------------------------------------------------*/
+
+@mixin respond($args) {
+  @for $bp from 1 through length($breakpoints_raw) { // loop through all the breakpoints
+    @media screen and (min-width: #{nth($breakpoints_raw, $bp)}) { // set media query
+      @each $propname, $propvalues in $args { // loop through all the properties
+        @if $bp <= length($propvalues) { // check if the number of values is less than the number of breakpoints
+          $value : unquote(#{nth($propvalues, $bp)});
+          @if( $propname != null ) {
+            #{$propname} : $value; // apply value to the property
+          }
+        }
+      }
+    }
+  }
+}
+
+//-----------------------------------------------------------------------
+// GRID SPAN
+//
+//  usage:
+//    width: get-span(2, 20);
+//-----------------------------------------------------------------------
+@function get-span($span, $parent) {
+  @return ($span / $parent) * 100%;
+}

@@ -1,0 +1,16 @@
+$gap: 28px;
+$mobile: 320px;
+$tablet: 769px;
+$desktop: 924px;
+$desktop-md: 1152px + (2 * $gap);
+$desktop-lg: 1344px + (2 * $gap);
+
+$breakpoints: (
+  mobile: $mobile,
+  tablet: $tablet,
+  desktop: $desktop,
+  desktop-md: $desktop-md,
+  desktop-lg: $desktop-lg
+);
+
+$breakpoints_raw: ( $mobile, $tablet, $desktop, $desktop-md, $desktop-lg );

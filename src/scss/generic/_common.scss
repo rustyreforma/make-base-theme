@@ -1,0 +1,46 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    //zoom: 0.93;
+    font-family: $sourcesans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+main {
+    min-height: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    // -webkit-appearance: none;
+    // outline: none;
+}
+
+figure {
+    margin: 0;
+}
+
+ol,
+ul {
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+input {
+    border: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}

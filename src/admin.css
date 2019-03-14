@@ -1,0 +1,4 @@
+table.acf-table {}
+table.acf-table td.acf-field.acf-field-group { padding:0px; }
+table.acf-table td.acf-field.acf-field-group > table.acf-table { border:0; }
+table.acf-table td.acf-field.acf-field-group > table.acf-table > thead { display:none; }
