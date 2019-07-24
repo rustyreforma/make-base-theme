@@ -1,0 +1,163 @@
+.c-cards {
+    padding-top: 27px;
+    padding-bottom: 27px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include maxpoint($tablet) {
+        flex-direction: row;
+        margin-top: 102px;
+
+    }
+    &:nth-child(even) {
+        @include maxpoint($tablet) {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            flex-direction: row-reverse;
+            .c-card_info {
+                padding-left: 5%;
+            }
+        }
+    }
+    &:last-child {
+        margin-bottom: 50px;
+        @include maxpoint($tablet) {
+            margin-bottom: 102px;
+        }
+    }
+    > div {
+        flex-basis: auto;
+        @include maxpoint($tablet) {
+            flex-basis: 50%;   
+        }
+    }
+    .c-card_info {
+        padding-left: 0;
+        margin-bottom: 20px;
+        width: 100%;
+        @include maxpoint($tablet) {
+            padding-left: 8%;
+            margin-bottom: 0;
+            width: auto;
+        }
+        .c-card_title {
+            font-size: 14px;
+            line-height: 16px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #000000;
+            margin: 0;
+            @include maxpoint($tablet) {
+                font-size: 16px;
+                line-height: 19px;
+            }
+        }
+        .c-card_sub-title {
+            font-size: 28px;
+            line-height: 28px;
+            color: $green;
+            margin-top: 0;
+            margin-bottom: 24px;
+            @include maxpoint($tablet) {
+                font-size: 38px;
+                line-height: 38px;
+            }
+        }
+        p {
+            width: 100%;
+            max-width: 289px;
+            font-size: 18px;
+            line-height: 22px;
+            color: #333333;
+            margin: 0 0 40px;
+            @include maxpoint($tablet) {
+                font-size: 21px;
+                line-height: 27px;
+            }
+        }
+        .o-cta {
+            left: 0;
+        }
+    }
+    .c-card_featured {
+        position: relative;
+        align-self: normal;
+        margin: 50px 0;
+        width: 100%;
+        @include maxpoint($tablet) {
+            width: auto;
+            margin: 0;
+        }
+        .c-card_featured-img {
+            width: 100%;
+            max-width: 473px;
+            height: 256px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
+            position: relative;
+            z-index: 20;
+            margin: 0 auto;
+            @include maxpoint($tablet) {
+                margin: 0;
+            }
+
+            > img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 90px;
+            } 
+            > a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 20;
+            }
+            
+        }
+        &.ltb:after {
+            content: '';
+            width: 73%;
+            height: 121%;
+            // background-color: #A20005;
+            position: absolute;
+            z-index: 1;
+            top: -27px;
+            left: 55px;
+            @include maxpoint($tablet) {
+                left: -29px;
+                width: 80%;
+            }         
+        }
+        &.lb:after {
+            content: '';
+            width: 70%;
+            height: 100%;
+            // background-color: #FFB319;
+            position: absolute;
+            z-index: 1;
+            top: 27px;
+            left: 54px;
+            @include maxpoint($tablet) {
+                left: -29px;
+                width: 80%;
+            }
+        }
+        &.tr:after {
+            content: '';
+            width: 80%;
+            height: 100%;
+            // background-color: #FFB319;
+            position: absolute;
+            z-index: 1;
+            top: -37px;
+            left: 44px;
+        }
+    }
+    
+}

@@ -1,0 +1,84 @@
+<section id="{{ content.id }}" class="o-container whatsnew">
+    <h2 class="">{{ content.news_title }}</h2>
+    <div class="c-three-cards">
+        {# {{ dump (content) }} #}
+        {% for events in latestevents %}
+        <div>  
+            <img src="{{ events.thumbnail.src }}" alt="">
+            <div>
+                <h5 class="c-three-cards_date">{{ events.post_date }}</h5>
+                <h2 class="c-three-cards_title">{{ events.post_title }}</h2>
+                <p>{{ events.excerpt }}</p>
+                <a class="cta" href="{{ events.path }}">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+        <a class="o-cta" href="{{ content.news_cta_link }}">{{ content.news_cta_name }}</a>
+    </div>
+</section>
+<section class="c-roundabout">
+    <div class="o-container roundabout">
+        <div class="round">
+            <h5>Product Updates</h5>
+            <h2>Upcoming Products</h2>
+            <ul id="carousel" class="top_slider roundabout-holder">
+                {% for product in upcomingproducts %}
+                <li>
+                    <div>
+                        <img src="{{ function('get_the_post_thumbnail_url', product.ID) }}" alt="">
+                        <div>
+                            <h2>{{ product.post_title }}</h2>
+                            <h5>{{ function('get_the_terms', product.id, 'product_cat')[0].name }}</h5>
+                            <p>{{ product.description }}</p>
+                            <span>Available only in: 
+                                {% for flag in product.availability %}
+                                    <img src="{{ theme.link }}/src/images/{{ flag }}.png" alt="">
+                                {% endfor %}
+                            </span>
+                            <a href="{{ product.path }}">view product</a>
+                            <a href="#">download brochure</a>
+                        </div>
+
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="glide glide-carousel-mobile">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {% for product in upcomingproducts %}
+                        <li class="glide__slide">
+                            <div>
+                                <img src="{{ theme.link }}/src/images/niwicaprice.png" alt="">
+                                <div>
+                                    <h2>{{ product.post_title }}</h2>
+                                    <h5>{{ function('get_the_terms', product.id, 'product_cat')[0].name }}</h5>
+                                    <p>{{ product.description }}</p>
+                                    <span>Available only in: 
+                                        {% for flag in product.availability %}
+                                            <img src="{{ theme.link }}/src/images/{{ flag }}.png" alt="">
+                                        {% endfor %}
+                                    </span>
+                                    <a href="{{ product.path }}">view product</a>
+                                    <a href="#">download brochure</a>
+                                </div>
+
+                            </div>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                <div class="glide__bullets" data-glide-el="controls[nav]">
+                    {% set i = 0 %}
+                    {% for product in upcomingproducts %}
+                        <button class="glide__bullet" data-glide-dir="={{ i }}"></button>
+                        {% set i = i + 1 %}
+                    {% endfor %}
+                </div>
+            </div>
+
+            <span class="rarrow left-arrow"><img src="{{ theme.link }}/src/images/greenbutton.png" alt=""></span>
+            <span class="rarrow right-arrow"><img src="{{ theme.link }}/src/images/greenbutton.png" alt=""></span>
+        </div>
+    </div>
+</section>

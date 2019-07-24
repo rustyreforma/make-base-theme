@@ -1,0 +1,22 @@
+<section id="{{ content.id }}" class="c-latest-videos">
+<div class="o-container">
+    <div class="c-latest-videos_info">
+        <h5>latest videos</h5>
+        <h2>{{ content.title }}</h2>
+        <p>{{ content.description }}</p>
+        <a href="{{ content.cta_link.url }}" class="o-cta">{{ content.cta_name }}</a>
+    </div>
+    <div class="c-latest-videos_video" data-simplebar>
+        <ul class="c-latest-videos_video__list">
+            {% for video in latestvideos %}
+            <li class="item"
+                style="background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.6) 100%), url({{ video.thumbnail }})">
+                <h6>{{ video.title }}</h6>
+                <h5>{{ video.sub_heading|striptags|slice(0, 27) }}</h5>
+                <a href="{{ video.video_url }}" data-lity></a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+</section>

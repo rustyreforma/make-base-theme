@@ -1,0 +1,53 @@
+<section id="{{ content.id }}" class="o-container whatsnew">
+    <h2 class="">{{ content.news_title }}</h2>
+    <div class="c-three-cards">
+        {# {{ dump (content) }} #}
+        {% for news in latestnews %}
+        <div>  
+            <img src="{{ news.thumbnail.src }}" alt="">
+            <div>
+                <h5 class="c-three-cards_date">{{ news.post_date }}</h5>
+                <h2 class="c-three-cards_title">{{ news.post_title }}</h2>
+                <p>{{ news.excerpt }}</p>
+                <a class="cta" href="{{ news.path }}">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+        <a class="o-cta" href="{{ content.news_cta_link }}">{{ content.news_cta_name }}</a>
+    </div>
+</section>
+<section class="c-testimonials">
+    <div class="o-container">
+        <div>
+            <h5 class="c-testimonials_heading">{{ content.testimonial_title }}</h5>
+            <h3 class="c-testimonials_subheading">{{ content.testimonial_sub_title }}</h3>
+        </div>
+        <div class="glide-testimonials-wrapper">
+            <div class="glide glide-testimonials">
+                <div class="glide__track" data-glide-el="track">
+                    <ul class="glide__slides">
+                        {% for testimonial in testimonials %}
+                            <li class="glide__slide">
+                                <div class="glide-testimonials__wrapper">
+                                    <div class="c-testimonial_memberimage"></div>
+                                    <div class="c-testimonial_wrapper">
+                                        <img src="{{ theme.link }}/src/images/apostrophe.png" alt="">
+                                        <p>{{ testimonial.testimonial }}</p>
+                                        <div class="c-testimonial_namewrap">
+                                            <span class="c-testimonial_name">{{ testimonial.post_title }}, {{ testimonial.age }}</span>
+                                            <span class="c-testimonial_sub">{{ testimonial.sub_title }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                    <div data-glide-el="controls" class="c-glide__controls">
+                        <button class="c-glide__prev" data-glide-dir="<"></button>
+                        <button class="c-glide__next" data-glide-dir=">"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

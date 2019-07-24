@@ -1,40 +1,31 @@
 <?php
 /**
- * The template for displaying Archive pages.
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * Methods for TimberHelper can be found in the /lib sub-directory
- *
- * @package  WordPress
- * @subpackage  Timber
- * @since   Timber 0.2
+ * Template Name: Articles
  */
-
-$templates = array( 'archive.twig', 'index.twig' );
 
 $context = Timber::get_context();
 
-$context['title'] = 'Archive';
-if ( is_day() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
-} else if ( is_month() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'M Y' );
-} else if ( is_year() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
-} else if ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} else if ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'archive-' . get_query_var( 'cat' ) . '.twig' );
-} else if ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'archive-' . get_post_type() . '.twig' );
+$category = get_category( get_query_var( 'cat' ) );
+$cat_id = $category->slug;
+
+global $paged;
+if (!isset($paged) || !$paged){
+    $page = (get_query_var('paged')) ? get_query_var('paged') : 1;
 }
 
-$context['posts'] = new Timber\PostQuery();
+$articles = array(
+    'post_type'      => 'post',
+    'post_status'    => 'publish',
+    'orderby'        => 'publish_date',
+    'order'          => 'asc',
+	'posts_per_page' => 6,
+	'category_name'  => $category->slug,
+    'paged'          => $paged,
+);
 
-Timber::render( $templates, $context );
+$niwi_articles_id = 263;
+
+$context['niwi_article_flexible'] = get_field('flexible_content', $niwi_articles_id);
+$context['articles'] = new Timber\PostQuery( $articles );
+
+Timber::render( array( 'page-article-category.twig', 'page.twig' ), $context );

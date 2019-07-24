@@ -1,0 +1,11 @@
+<div id="{{ content.id }}" class="o-container c-lessons">
+    <h2>{{ content.title }}</h2>
+    <p>{{ content.description }}</p>
+
+    <div class="c-lessons_video_gallery">
+        {% for image in content.gallery %}
+            <img src="{{ image.url }}" alt="">
+        {% endfor %}
+    </div>
+    <a class="o-cta" href="{{ content.cta_link.url }}">{{ content.cta_name }}</a>
+</div>

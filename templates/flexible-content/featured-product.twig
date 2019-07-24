@@ -1,0 +1,28 @@
+<section id="{{ content.id }}" class="c-view-products">
+    <div class="o-container">
+        <div class="c-view-products_info">
+            
+            <h5>featured product</h5>
+            <h2>{{ content.sub_heading }}</h2>
+            <p>{{ content.description|raw }}</p>
+            {% if content.cta_link %}
+                <a href="{{ content.cta_link.url }}" class="o-cta">{{ content.cta_name }}</a>
+            {% endif %}
+        </div>
+        <div class="c-view-products_product">
+            <div>
+                {% set image = function('get_the_post_thumbnail', content.featured_product_post.ID) %}
+                {{ image }}
+                <div>
+                    <h5>{{ function('get_the_terms', content.featured_product_post.ID, 'product_cat')[0].name }}</h5>
+                    <h2>{{ content.featured_product_post.post_title }}</h2>
+                    <p>{{ content.featured_product_post.excerpt }}</p>
+                    <span>Available only in: {% for flag in content.featured_product_post.availability %}
+                            <img src="{{ theme.link }}/src/images/{{ flag }}.png" alt="">
+                        {% endfor %}</span>
+                    <a href="{{ function('get_the_permalink', content.featured_product_post.ID) }}">View Product Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

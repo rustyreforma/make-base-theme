@@ -1,0 +1,11 @@
+<section id="{{ content.id }}" class="c-two_columns_with_image">
+    {% for content in content.column %}
+        <div style="background-image: url('{{ content.background_image.url }}');">
+            <h4>{{ content.title }}</h4>
+            <p>{{ content.content }}</p>
+            {% if content.cta_name %}
+            <a class="o-cta" href="{{ content.cta_link.url }}">{{ content.cta_name }}</a>
+            {% endif %}
+        </div>
+    {% endfor %}
+</section>

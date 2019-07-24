@@ -1,0 +1,23 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include "flexible.twig" %}
+    <section class="o-container">
+        {% include "video_menu.twig" %}
+        <div class="c-gallery-video">
+            {% for video in videos %}
+                {# {{ dump(video) }} #}
+                <div>
+                    <figure class="c-gallery-img">
+                        <img src="{{ video.thumbnail }}" alt="">
+                        <a href="{{ video.video_url }}" data-lity></a>
+                    </figure>
+
+                    <h5 class="c-gallery_item-title">{{ video.post_title }}</h5>
+                    <p>{{ video.sub_heading }}</p>
+                </div>
+            {% endfor %}
+        </div>
+        {% include "video-pagination.twig" %}
+    </section>
+{% endblock %}

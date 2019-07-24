@@ -1,16 +1,45 @@
-$color-teal: #03B2C6;
-$color-white: #FFFFFF;
-$color-light-green: #DBE9E9;
-$color-dark-green: #86A2A2;
-$color-green: #6DC386;
-$color-black: #404547;
-$color-gray: #999999;
-$color-light-gray: #EFEEEE;
-$color-cruise: #ABDFD4;
-$color-almost-white: #F3F2F1;
-$color-grey: #C2C2C2;
-$color-red: #FC5C65;
-$color-disabled: #F7F7F7;
-$color-gradient: linear-gradient(90deg, rgba(3,178,198,1) 50%, rgba(109,195,134,1) 100%);
-$color-primary: #68C2CC;
-$color-accent: $color-green;
+$red : #A20005;
+$green : #008075;
+$orange : #CC6500;
+$yellow : #FFB319;
+$grey : #3B423F;
+
+.bg-red {
+    background-color: #A20005;
+}
+
+.bg-green {
+    background-color: #008075;
+}
+
+.bg-orange {
+    background-color: #cc6500;
+}
+
+.bg-yellow {
+    background-color: #ffb319;
+}
+
+.bg-grey {
+    background-color: #3b423f;
+}
+
+.ft-red {
+    color: #A20005;
+}
+
+.ft-green {
+    color: #008075;
+}
+
+.ft-orange {
+    color: #cc6500;
+}
+
+.ft-yellow {
+    color: #ffb319;
+}
+
+.ft-grey {
+    color: #3b423f;
+}

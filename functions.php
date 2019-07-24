@@ -148,3 +148,4 @@ new StarterSite();
 require_once('lib/types.php');
 require_once('lib/enqueue.php');
 require_once('lib/custom_functions.php');
+require_once('lib/global_var.php');

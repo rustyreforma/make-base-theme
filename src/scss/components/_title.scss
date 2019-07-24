@@ -1,0 +1,44 @@
+.c-title-nav {
+    .c-title-nav_heading {
+        font-size: 30px;
+        line-height: 31px;
+        text-align: center;
+        color: #006459;
+        padding-top: 72px;
+        margin-bottom: 37px;
+        @include maxpoint($tablet) {
+            font-size: 38px;
+            line-height: 38px;
+        }
+    }
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding-left: 0;
+        li {
+            padding-bottom: 16px;
+            a {
+                font-size: 16px;
+                line-height: 19px;
+                text-align: center;
+                letter-spacing: 0.05em;
+                color: #3B423F;
+                padding: 0 16px;
+                text-transform: uppercase;
+                font-weight: 600;
+                transition: color linear 0.2s;
+                white-space: nowrap;
+                &:hover, &:active {
+                    color: #CC6500;
+                }
+            }
+            &--active {
+                a {
+                    color: #CC6500;
+                }
+            }
+        }
+        margin-bottom: 74px;
+    }
+}

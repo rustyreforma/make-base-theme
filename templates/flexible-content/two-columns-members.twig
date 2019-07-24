@@ -1,0 +1,11 @@
+<section id="{{ content.id }}" class="c-two_columns_members">
+    {% for content in content.column %}
+        <div>
+            <img src="{{ content.image.url }}" alt="">
+            <span>{{ content.position }}</span>
+            <p class="name">{{ content.full_name }}</p>
+            <p>{{ content.about }}</p>
+            <a href="{{ content.cta_link.url }}" class="o-cta" >{{ content.cta_name }}</a>
+        </div>
+    {% endfor %}
+</section>

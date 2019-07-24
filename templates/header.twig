@@ -1,0 +1,24 @@
+<header>
+    <nav class="o-container c-nav">
+        <div class="c-nav_logo">
+            <a href="{{ function('get_home_url') }}">
+                <img src="{{ options.header_logo }}" alt="logo" class="">
+            </a>
+        </div>
+        <div class="c-nav_burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="c-nav_menu-wrapper">
+            
+            <ul class="c-nav_menu">
+                {% for item in menu.items %}
+                        <li><a href="{{ item.link }}">{{ item.title }}</a></li>
+                {% endfor %}
+            </ul>
+            <a href="{{ options.member_login_link.url }}" class="c-nav_login">login</a>
+            <a href="#country-modal" data-lity><img src="{{ options.current_country_icon.url }}" alt="" class="c-nav_country-logo"></a>
+        </div>
+    </nav>
+</header>

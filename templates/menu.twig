@@ -1,10 +1,16 @@
-{% if menu %}
-	<ul>
-	{% for item in menu %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'menu': item.children} %}
-		</li>
-	{% endfor %}
+<div class="c-nav_burger">
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
+<div class="c-nav_menu-wrapper">
+	<ul class="c-nav_menu">
+		<li><a href="#">home</a></li>
+		<li><a href="#">company</a></li>
+		<li><a href="#">opportunity</a></li>
+		<li><a href="#">news</a></li>
+		<li><a href="#">contact</a></li>
 	</ul>
-{% endif %}
+	<a href="#" class="c-nav_login">login</a>
+	<img src="assets/images/uus.png" alt="" class="c-nav_country-logo">
+</div>

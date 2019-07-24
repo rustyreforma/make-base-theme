@@ -1,0 +1,35 @@
+.whatsnew {
+    background: #FFB319;
+    padding: 0 52px;
+    position: relative;
+    z-index: 20;
+    top: 422px;
+    margin-top: -422px;
+    > h2 {
+        font-size: 37px;
+        line-height: 40px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 0;
+        padding-top: 62px;
+        padding-bottom: 64px;
+        @include maxpoint ($tablet) {
+            font-size: 51px;
+            line-height: 51px;
+        }
+    }
+    .c-three-cards {
+        position: relative;
+        top: 253px;
+        margin-top: -253px;
+        > div {
+            margin-bottom: 20px;
+            @include maxpoint ($tablet) {
+                margin-bottom: 0;
+            }
+        }
+        .o-cta {
+            margin: 48px auto 0;
+        }
+    }
+}

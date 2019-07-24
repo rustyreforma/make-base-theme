@@ -1,0 +1,66 @@
+<section id="{{ content.id }}" class="c-hero" style="{{ not content.full_width ? '' : 'padding: 0;'  }}">
+    {{ not content.full_width ? '<div class="o-container">' : '' }}
+        <div class="glide glide-hero">
+            <div class="glide__track" data-glide-el="track">
+                
+                <ul class="glide__slides">			
+                    {% set b = 0 %}
+                    {% for item in content.slides %}
+
+                        {# {{ dump(slides) }} #}
+                        <li class="glide__slide" style="background-image: url('{{ item.background }}')">
+                            <div class="overlay"></div>
+                            <div class="c-hero_wrap">
+                                {# Hero Title #}
+                                {% if item.title %}
+                                    <h2 class="c-hero_title">{{ item.title }}</h2>
+                                {% endif %}
+
+                                {# Sub Heading #}
+                                {% if item.sub_heading %}
+                                    <p>{{ item.sub_heading }}</p>
+                                {% endif %}
+                                
+                                {# Author and Date #}
+                                {% if item.author and item.date %}
+                                    <p>By {{ item.author }} | {{ item.date }}</p>
+                                {% elseif item.author and not item.date %}
+                                    <p>By {{ item.author }}</p>
+                                {% else %}
+                                    <p>{{ item.date }}</p>
+                                {% endif %}
+                                
+                                {# Hero Content #}
+                                {% if item.content %}
+                                    <p>{{ item.content }}</p>
+                                {% endif %}
+                                
+                                {# Video Link Modal #}
+                                {% if item.video_link %}
+                                    <a href="{{ item.video_link }}" data-lity>
+                                        <img src="{{ theme.link }}/src/images/play-button.svg" alt="">
+                                    </a>
+                                {% endif %}
+
+                                {# Hero CTA #}
+                                {% if item.cta_link %}
+                                    <a href="{{ item.cta_link.url }}" class="o-cta">{{ item.cta_name }}</a>
+                                {% endif %}
+                            </div>
+                        </li>
+                        {% set b = b + 1 %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% if b > 1 %}
+            <div class="glide__bullets" data-glide-el="controls[nav]">
+                {% set i = 0 %}
+                {% for item in content.slides %}
+                    <button class="glide__bullet" data-glide-dir="={{ i }}"></button>
+                    {% set i = i + 1 %}
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    {{ not content.full_width ? '</div>' : '' }}
+</section>

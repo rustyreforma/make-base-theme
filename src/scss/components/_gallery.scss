@@ -1,0 +1,88 @@
+.c-gallery-video {
+    display: flex;
+    flex-wrap: unset;
+    flex-direction: column;
+    @include maxpoint($tablet) {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    > div {
+        flex-basis: 50%;
+        margin-bottom: 30px;
+        @include maxpoint ($tablet) {
+            margin-bottom: 80px;
+        }
+        &:nth-child(odd){
+            padding-right: 0;
+            @include maxpoint($tablet) {
+                padding-right: 32px;
+            }
+        }
+        &:nth-child(even){
+            padding-left: 0;
+            @include maxpoint($tablet) {
+                padding-left: 32px;
+            }
+        }
+    }
+    h5 {
+        color: #000000;
+        font-size: 22px;
+        line-height: 27px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        @include maxpoint($tablet) {
+            font-size: 28px;
+            line-height: 28px;
+            margin-top: 29px;
+            margin-bottom: 16px;
+        }
+    }
+    p {
+        font-size: 14px;
+        line-height: 18px;
+        color: #949494;
+        margin-bottom: 0;
+        @include maxpoint($tablet) {
+            font-size: 16px;
+            line-height: 21px;
+        }
+    }
+    .c-gallery-img {
+        position: relative;
+        line-height: 0;
+        img {
+            position: relative;
+            z-index: 10;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+        }
+        &:after {
+            content: '.';
+            color: transparent;
+            background-color: rgba(0, 0, 0, 0.15);
+            background-image: url('../images/play-button.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 20%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 20;
+            @include maxpoint ($tablet) {
+                background-size: auto;
+            }
+        }
+        a {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 30;
+            top: 0;
+            left: 0;
+        }
+    }
+}

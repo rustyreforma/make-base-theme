@@ -1,0 +1,20 @@
+{# PAGINATION #}
+<div class="c-pagination">
+    {% if videos.pagination.prev %}
+        <a href="{{videos.pagination.prev.link}}" class="prev {{videos.pagination.prev.link|length ? '' : 'invisible'}}"><img src="{{ theme.link }}/src/images/page-arrow-prev.svg" alt=""></a>
+    {% endif %}
+    <ul class="pages">
+        {% for page in videos.pagination.pages %}
+            <li>
+                {% if page.link %}
+                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+                {% else %}
+                    <span class="{{page.class}}">{{page.title}}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if videos.pagination.next %}
+        <a href="{{videos.pagination.next.link}}" class="next {{videos.pagination.next.link|length ? '' : 'invisible'}}"><img src="{{ theme.link }}/src/images/page-arrow-next.svg" alt=""></a>
+    {% endif %}
+</div>

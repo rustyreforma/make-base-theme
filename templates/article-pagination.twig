@@ -1,0 +1,20 @@
+{# PAGINATION #}
+<div class="c-pagination">
+    {% if articles.pagination.prev %}
+        <a href="{{articles.pagination.prev.link}}" class="prev {{articles.pagination.prev.link|length ? '' : 'invisible'}}"><img src="{{ theme.link }}/src/images/page-arrow-prev.svg" alt=""></a>
+    {% endif %}
+    <ul class="pages">
+        {% for page in articles.pagination.pages %}
+            <li>
+                {% if page.link %}
+                    <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+                {% else %}
+                    <span class="{{page.class}}">{{page.title}}</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+    {% if articles.pagination.next %}
+        <a href="{{articles.pagination.next.link}}" class="next {{articles.pagination.next.link|length ? '' : 'invisible'}}"><img src="{{ theme.link }}/src/images/page-arrow-next.svg" alt=""></a>
+    {% endif %}
+</div>

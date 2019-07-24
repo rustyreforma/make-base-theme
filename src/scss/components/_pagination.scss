@@ -1,0 +1,40 @@
+.c-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 60px;
+    > a {
+        margin-right: 24px;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+    ul {
+        display: flex;
+        align-items: center;
+        li {
+            font-size: 16px;
+            line-height: 53px;
+            letter-spacing: -0.0181818em;
+            margin-right: 24px;
+            font-weight: 600;
+            // &:last-child {
+            //     margin-right: 0;
+            // }
+            span {
+                color: $green;
+                border-bottom: 2px solid red;
+                padding: 2px;
+            }
+            a {
+                color: #828282;
+                padding: 2px;
+                transition: all 0.2s linear;
+                &:hover {
+                    color: $green;
+                    border-bottom: 2px solid red;
+                }
+            }
+        }
+    }
+}

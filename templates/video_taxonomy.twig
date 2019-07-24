@@ -1,0 +1,30 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    {% set i = 1 %}
+	{% for content in niwi_category_flexible %}
+        {% if content.acf_fc_layout == 'hero' and i == 1 %}
+            {% include "flexible-content/hero.twig" %}
+            {% set i = 1 + 1 %}
+        {% endif %}
+    {% endfor %}
+
+    <section class="o-container">
+        {% include "video_menu.twig" %}
+        <div class="c-gallery-video">
+            {% for video in videos %}
+                <div>
+                    <figure class="c-gallery-img">
+                        <img src="{{ video.thumbnail }}" alt="">
+                        <a href="{{ video.video_url }}" data-lity></a>
+                    </figure>
+
+                    <h5 class="c-gallery_item-title">{{ video.post_title }}</h5>
+                    <p>{{ video.sub_heading }}</p>
+                </div>
+            {% endfor %}
+        </div>
+
+        {% include "video-pagination.twig" %}
+    </section>
+{% endblock %}

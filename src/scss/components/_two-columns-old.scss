@@ -1,0 +1,38 @@
+.c-two_columns_old {
+    display: flex;
+    flex-direction: column;
+    @include maxpoint($desktop) {
+        flex-direction: row;
+    }
+    h2 {
+        font-size: 31px;
+        line-height: 40px;
+        font-weight: 300;
+        color: #396352;
+        margin-bottom: 17px;
+    }
+    > div {
+        flex-basis: 50%;
+        padding: 24px 75px 70px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        // @include maxpoint($desktop) {
+        //     padding: 24px 0 70px;
+        // }
+        > div {
+            font-size: 16px;
+            line-height: 26px;
+            color: #43484D;
+        }
+        // &:first-child {
+        //     @include maxpoint($desktop) {
+        //         padding-right: 24px;
+        //     }
+        // }
+        // &:last-child {
+        //     @include maxpoint($desktop) {
+        //         padding-left: 24px;
+        //     }
+        // }
+    }   
+}

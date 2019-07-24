@@ -1,0 +1,149 @@
+.c-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    flex-wrap: wrap;
+    .c-nav_logo {
+        padding-left: 24px;
+        position: relative;
+        @include maxpoint($desktop-md) {
+            padding-left: 0;
+        }
+    }
+    .c-nav_burger {
+        cursor: pointer;
+        span {
+            width: 20px;
+            border-bottom: 3px solid #000;
+            display: block;
+            margin-bottom: 3px;
+            transform: rotate(0);
+            transition: all linear 300ms;
+            position: relative;
+        }
+        margin-right: 24px;
+        display: block;
+        @include maxpoint($desktop) {
+            display: none;
+        }
+        position: relative;
+        &.active {
+            span {
+                opacity: 0;
+                transition: all linear 300ms;
+                transform-origin: center center;
+                &:first-child{
+                    opacity: 1;
+                    transform: rotate(45deg);
+                    top: 6px;
+                }
+                &:nth-child(2) {
+                    opacity: 1;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    .c-nav_menu-wrapper {
+        flex-basis: 100%;
+        display: flex;
+        align-items: center;
+        text-transform: uppercase;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        -webkit-transition: height 500ms ease;
+        -o-transition: height 500ms ease;
+        transition: height 500ms ease;
+        overflow: hidden;
+        padding-right: 0;
+        @include maxpoint($desktop) {
+            padding-right: 24px;
+        } 
+        @include maxpoint($desktop-md) {
+            padding-right: 0;
+        }
+        @include maxpoint($desktop) {
+            width: auto;
+            justify-content: unset;
+            flex-basis: auto;
+            display: block;
+        }
+        &:not(.active) {
+            display: none;
+            @include maxpoint($desktop) {
+                display: flex;
+            }
+        }
+         .c-nav_menu {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0 15px;
+            flex-basis: 100%;
+            @include maxpoint($desktop) {
+                margin: 0;
+                flex-basis: auto;
+                flex-direction: row;
+                width: auto;
+            }
+            li {
+                a {
+                    font-size: 16px;
+                    line-height: 19px;
+                    letter-spacing: 0.05em;
+                    color: #3B423F;
+                    padding: 15px 24px;
+                    display: block;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    border-bottom: 1px solid $grey;
+                    transition: color linear 0.2s;
+                    &:hover {
+                        color: $orange;
+                    }
+                    @include maxpoint($desktop) {
+                        padding: 15px 12px;
+                        border: 0;
+                    }
+                }
+                &:first-child {
+                    a {
+                        border-top: 1px solid $grey;
+                        @include maxpoint($desktop) {
+                            border: 0;
+                        }
+                    }
+                }
+            }
+        }
+        .c-nav_login {
+            padding: 15px 0;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.05em;
+            color: #3B423F;
+            font-weight: 600;
+            transition: color linear 0.2s;
+            &:hover {
+                color: $orange;
+            }
+            margin-left: 24px;
+            @include maxpoint($desktop) {
+                margin-left: 0;
+                padding: 15px 18px;
+            }
+        }
+        .c-nav_country-logo {
+            width: 32px;
+            height: 32px;
+            border-radius: 100%;
+            cursor: pointer;
+            margin-right: 24px;
+            @include maxpoint($desktop) {
+                margin-right: 0;
+            }
+        }
+    }
+
+
+}

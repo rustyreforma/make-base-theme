@@ -1,0 +1,29 @@
+.c-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(124.08deg, #040614 24.25%, #050A29 56.65%);
+    z-index: 1006;
+    opacity: 0;
+    transition: all 300ms ease-out;
+    &--is-close{
+        display: none;
+    }
+   
+    &--is-open {
+        opacity: 1;
+    }
+
+    &-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+}
+
+.c-modal--body-lock {
+    overflow: hidden;
+}

@@ -1,0 +1,54 @@
+#country-modal {
+    background-color: #fff;
+    width: 100%;
+    max-width: 740px;
+    padding: 70px 130px 125px;
+    border-top: 8px solid #FFB319;
+    h2 {
+        margin-top: 0;
+        margin-bottom: 48px;
+        font-weight: normal;
+        font-size: 32px;
+        line-height: 37px;
+        text-align: center;
+        color: #6C6C6C;
+    }
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        height: auto;
+        //max-height: 990px;
+        flex-flow: column wrap;
+        ul {
+            flex-basis: 100%;
+            margin-bottom: 48px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: baseline;
+            li {
+                text-align: center;
+                // flex-basis: 33.33%;
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 19px;
+                margin-bottom: 27px;
+                margin-right: 25px;
+                img {
+                    margin-right: 13px;
+                    width: 16px;
+                    height: 16px;
+                }
+                a {
+                    color: #6A6A6A;
+                    display: flex;
+                    justify-content: center;
+                    transition: color 0.2s linear;
+                    &:hover {
+                        color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+}

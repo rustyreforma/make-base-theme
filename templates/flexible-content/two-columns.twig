@@ -1,0 +1,28 @@
+<section id="{{ content.id }}" class="o-container">
+    <div class="c-cards [ {{ content.alignment }} ]">
+        <div class="c-card_info">
+            <h6 class="c-card_title">{{ content.card_title }}</h6>
+            <h4 class="c-card_sub-title">{{ content.card_sub_title }}</h4>
+            <p>{{ content.description }}</p>
+            {% if content.cta_type == 'gallery' %}
+
+            {% else %}
+                <a class="o-cta " href="{{ content.cta_link.url }}">{{ content.cta_name }}</a>
+            {% endif %}
+            
+        </div>
+        <style>
+            .{{ content.featured_background_position }}::after {
+                    background-color: {{ content.featured_background_color }};
+            }
+        </style>
+        <div class="c-card_featured {{ content.featured_background_position }}">
+            <div class="c-card_featured-img" style="background-image: url('{{ content.featured_image.url }}');">
+                {% if content.video_link %}
+                    <img src="{{ theme.link }}/src/images/play-button.svg" alt="">
+                    <a href="{{ content.video_link.url }}" data-lity></a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

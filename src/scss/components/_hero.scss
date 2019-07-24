@@ -1,0 +1,76 @@
+.c-hero {
+    margin-bottom: 0;
+    padding: 56px 0 53px;
+    position: relative;
+    .glide-hero {
+        height: 560px;
+        .glide__track {
+            z-index: 10;
+            position: relative;
+            .glide__slide {
+                height: 560px;
+                background-size: cover;
+                position: relative;
+                .overlay {
+                    background: rgba(0, 0, 0, 0.47);
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                }
+                .c-hero_wrap {
+                    z-index: 10;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    text-align: center;
+                    width: 100%;
+                    .c-hero_title {
+                        color: #fff;
+                        font-size: 31px;
+                        line-height: 31px;
+                        margin-bottom: 8px;
+                        @include maxpoint($desktop) {
+                            font-size: 51px;
+                            line-height: 51px;
+                        }
+                    }
+                    p {
+                        color: #fff;
+                        font-size: 16px;
+                        line-height: 21px;
+                        padding: 0 24px;
+                        @include maxpoint($desktop) {
+                            font-size: 21px;
+                            line-height: 30px;
+                            padding: 0;
+                        }
+                        margin: 0 auto 40px;
+                        max-width: 692px;
+                    }
+                    .o-cta {
+                        left: -24px;
+                    }
+                }
+            }
+        }
+        .glide__bullets {
+            z-index: 20;
+            position: relative;
+            bottom: 48px;
+            .glide__bullet--active {
+                background-color: #FFDA44;
+            }
+        }
+    }
+    &:after {
+        content: ".";
+        color: transparent;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: $green;
+        top: 0;
+        max-width: 1337px;
+    }
+}

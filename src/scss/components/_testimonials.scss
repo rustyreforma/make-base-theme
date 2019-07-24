@@ -1,0 +1,193 @@
+.c-testimonials {
+    position: relative;
+    background: #A20005;
+    padding-bottom: 97px;
+    padding-top: 773px;
+    @include maxpoint(1156px) {
+        padding-bottom: 137px;
+    }
+    > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        @include maxpoint(1156px) {
+            justify-content: space-between;
+            text-align: left;
+        }
+        > div {
+            flex-basis: auto;
+            @include maxpoint(1156px) {
+                flex-basis: 35%;
+            }
+        }
+        .c-testimonials_heading {
+            font-size: 18px;
+            line-height: 25px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-weight: 600;
+            margin: 0;
+            @include maxpoint($tablet) {
+                font-size: 21px;
+                line-height: 25px;
+            }
+        }
+        .c-testimonials_subheading {
+            font-size: 27px;
+            line-height: 30px;
+            color: #FFFFFF;
+            font-style: italic;
+            margin-top: 8px;
+            margin-bottom: 0;
+            @include maxpoint($tablet) {
+                font-size: 47px;
+                line-height: 40px;
+            }
+            @include maxpoint($desktop) {
+                font-size: 67px;
+                line-height: 60px;
+            }
+        }
+        .glide-testimonials-wrapper {
+            position: relative;
+            text-align: left;
+            margin-top: 50px;
+            @include maxpoint(1156px) {
+                // position: absolute;
+                // right: 0;
+                // bottom: 97px;
+                margin-top: 0;
+            }
+        }
+        .glide__track {
+            max-width: 300px;
+            position: relative;
+            border-radius: 20px;
+            @include maxpoint($tablet) {
+                max-width: 660px;
+            }
+            // @include maxpoint(1156px) {
+            //     border-top-right-radius: 0;
+            //     border-bottom-right-radius: 0;
+            // }
+            background-color: #fff;
+            .c-glide__prev {
+                background-image: url('../images/glide-arrow.svg');
+                width: 11.71px;
+                height: 24px;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border: 0;
+                position: absolute;
+                top: calc(44%);
+                left: 15px;
+                background-color: transparent;
+                @include maxpoint($tablet) {
+                    left: 30px;
+                }
+            }
+            .c-glide__next {
+                background-image: url('../images/glide-arrow.svg');
+                width: 11.71px;
+                height: 24px;
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border: 0;
+                position: absolute;
+                top: calc(44%);
+                right: 15px;
+                -webkit-transform:rotate(180deg);
+                -moz-transform:rotate(180deg);
+                transform:rotate(180deg);
+                background-color: transparent;
+                @include maxpoint($tablet) {
+                    right: 30px;
+                }
+            }
+        }
+        .glide-testimonials {
+            position: relative;
+            .glide-testimonials__wrapper {
+                width: 100%;
+                max-width: 720px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                padding: 41px 40px;
+                flex-direction: column;
+                @include maxpoint($tablet) {
+                    flex-direction: row;
+                    padding: 41px 80px;
+                }
+                .c-testimonial_memberimage {
+                    border-radius: 100%;
+                    flex-basis: auto;
+                    width: 100%;
+                    max-width: 191px;
+                    height: 190px;
+                    display: inline-block;
+                    background-image: url('../images/testiphoto.png');
+                    background-repeat: no-repeat;
+                    background-position: top center;
+                    background-size: 100% auto;
+                    @include maxpoint($tablet) {
+                        flex-basis: 35%;
+                    }
+                }
+                .c-testimonial_wrapper {
+                    flex-basis: 65%;
+                    @include maxpoint($tablet) {
+                        padding-left: 48px;
+                    }
+                    > img {
+                        max-width: 28px;
+                        @include maxpoint($tablet) {
+                            max-width: 68px;
+                        }
+                    }
+                    p {
+                        font-size: 18px;
+                        line-height: 24px;
+                        color: #006459;
+                        font-style: italic;
+                        @include maxpoint($tablet) {
+                            font-size: 21px;
+                            line-height: 27px;
+                        }
+                    }
+                    .c-testimonial_namewrap {
+                        background-image: url('../images/apostrophe-inverted.png');
+                        background-repeat: no-repeat;
+                        background-position: top right;
+                        background-size: 28px auto;
+                        @include maxpoint($tablet) {
+                            background-size: 68px auto;
+                        }
+                        .c-testimonial_name {
+                            font-size: 16px;
+                            line-height: 19px;
+                            color: #3B423F;
+                            display: block;
+                        }
+                        .c-testimonial_sub {
+                            font-size: 12px;
+                            line-height: 17px;
+                            letter-spacing: 0.1em;
+                            text-transform: uppercase;
+                            color: #646464;
+                            display: block;
+                            padding-bottom: 18px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

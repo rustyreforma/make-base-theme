@@ -1,0 +1,51 @@
+label {
+    font-size: 16px;
+    display: block;
+}
+
+input.input__text,
+input.input__email {
+    font-size: 16px;
+    padding: 10px 0;
+    margin-top: 25px;
+    width: 100%;
+    background-color: transparent;
+
+    &--border {
+        border-bottom: 1px #E4E4E4 solid;
+    }
+
+    &::-webkit-input-placeholder {
+        color: #9B9B9B;
+    }
+
+    &::-moz-placeholder {
+        color: #9B9B9B;
+    }
+}
+
+input.input__submit {
+    font-size: 12px;
+    padding: 10px 0;
+    font-weight: 700;
+    letter-spacing: 2px;
+    background-color: transparent;
+    cursor: pointer;
+
+    &--border {
+        border-bottom: 1px #141618 solid;
+    }
+}
+
+textarea.textarea {
+    font-size: 16px;
+    padding: 10px 0;
+    margin-top: 25px;
+    width: 100%;
+    background-color: transparent;
+
+    &--border {
+        border: 0;
+        border-bottom: 1px #E4E4E4 solid;
+    }
+}

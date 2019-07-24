@@ -1,0 +1,34 @@
+.c-lessons {
+    text-align: center;
+    h2 {
+        margin: 68px auto 24px;
+        font-size: 28px;
+        line-height: 31px;
+        color: #006459;
+        max-width: 494px;
+    }
+    p {
+        font-size: 16px;
+        line-height: 21px;
+        color: #000000;
+        max-width: 494px;
+        margin: 0 auto 56px;
+    }
+    .o-cta {
+        margin-bottom: 91px;
+    }
+    .c-lessons_video_gallery {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 800px;
+        margin: 0 auto 55px;
+        flex-direction: row;
+        > img {
+            flex-basis: 33.33%;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+    }
+}

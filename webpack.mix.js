@@ -23,8 +23,8 @@ mix.webpackConfig(webpack => {
 });
 
 mix.js("src/js/main.js", "dist/js/main.js")
-    //.copy('src/images/', 'dist/images/')
-    //.copy('src/fonts/', 'dist/fonts/')
+    .copy('src/images/', 'dist/images/')
+    .copy('src/fonts/', 'dist/fonts/')
     .sass("src/scss/main.scss", "dist/css/main.css")
     .options({
         processCssUrls: false

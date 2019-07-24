@@ -1,34 +1,52 @@
-//@import "~/normalize.min.css";
+// Required Core Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
 
-// SETTINGS
-@import "settings/_colors";
-@import "settings/_fonts";
-@import "settings/_variables";
+@import "../../node_modules/simplelightbox/dist/simplelightbox";
 
-// TOOLS
-@import "tools/_mixins";
-@import "tools/_utils";
+@import "settings/_common.scss";
+@import "settings/_font.scss";
+@import "settings/_variables.scss";
+@import "settings/_mixins.scss";
+@import "settings/_anim.scss";
+@import "settings/_colors.scss";
 
-// GENERICS
-@import "generic/_common";
-@import "generic/_header";
-@import "generic/_footer";
+@import "objects/_o-container.scss";
+@import "objects/_o-grids.scss";
+@import "objects/_o-cta.scss";
+@import "objects/_o-input.scss";
+@import "objects/_wraps.scss";
 
-// OBJECTS
-@import "objects/_buttons";
-@import "objects/_inputs";
-@import "objects/_form";
-@import "objects/_layouts";
-@import "objects/_pagination";
-@import "objects/_banner";
+@import "components/_nav.scss";
+@import "components/_hero.scss";
+@import "components/_footer.scss";
+@import "components/_modal.scss";
+@import "components/_cards.scss";
+@import "components/_article.scss";
+@import "components/_title.scss";
+@import "components/_gallery.scss";
+@import "components/_three-cards.scss";
+@import "components/_testimonials.scss";
+@import "components/_lessons.scss";
+@import "components/_latest-videos.scss";
+@import "components/_view-products.scss";
+@import "components/_pagination.scss";
+@import "components/_post.scss";
+@import "components/_related-articles.scss";
+@import "components/_country-modal.scss";
+@import "components/_two-columns-old.scss";
+@import "components/_full-page-banner.scss";
+@import "components/_two-columns-with-image.scss";
+@import "components/_full-signage.scss";
+@import "components/_two-columns-members.scss";
+@import "components/_custom-bar.scss";
 
-// PAGES
+@import "pages/_homepage.scss";
 
-// VENDORS
-//@import "vendor/_ionicons";
-@import "vendor/_gdpr";
-@import "vendor/_loading";
+@import "settings/_utils.scss";
 
-// COMPONENTS
-@import "components/_modal";
-@import "components/_animation-delay";
+@import "vendor/lity.min";
+@import "vendor/simplebar";
+
+@import "components/_roundaboutSlider.scss";

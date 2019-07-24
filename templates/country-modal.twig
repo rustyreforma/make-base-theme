@@ -1,0 +1,71 @@
+<div id="country-modal" class="lity-hide">
+    <h2>Choose your country</h2>
+    <div>
+        <ul>
+            {% for country in options.countries %}
+                <li><a href="{{ country.country_link.url }}">
+                    <img src="{{ country.icon.url }}" alt="">
+                    <span>{{ country.country_name }}</span>
+                </a></li>
+            {% endfor %}
+        </ul>
+        {# <div>
+            <span>North America</span>
+            <ul>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+            </ul>
+        </div>
+        <div>
+            <span>North America</span>
+            <ul>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+            </ul>
+        </div>
+        <div>
+            <span>North America</span>
+            <ul>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+                <li>Canada</li>
+            </ul>
+        </div> #}
+    </div>
+</div>

@@ -1,0 +1,35 @@
+.c-two_columns_members {
+    display: flex;
+    flex-direction: column;
+    @include maxpoint($desktop) {
+        flex-direction: row;
+    }
+    > div {
+        flex-basis: 50%;
+        text-align: center;
+        padding: 80px 75px 70px;
+        img {
+            max-width: 528px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        span {
+            display: block;
+            margin-top: 24px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 26px;
+            color: #43484D;
+            margin-top: 16px;
+            &.name {
+                margin-top: 12px;
+                font-size: 31px;
+                line-height: 40px;
+                font-weight: 300;
+                color: #396352;
+                margin-bottom: 12px;
+            }
+        }
+    }
+}

@@ -1,1 +1,82 @@
-Copyright {{"now"|date('Y')}}
+<footer>
+    <div class="bg-green">
+        <div class="o-container c-join">
+            {% for content in options.column %}
+                <div>
+                    {{ content.content }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="o-container c-footer">
+        <div class="c-footer_info">
+            <a href="#">
+                <img src="{{ options.footer_logo }}" alt="">
+            </a>
+            {% if options.social_media %}
+                <ul class="c-footer_social">
+                    {% for social in options.social_media %}
+                        <li><a href="{{ social.link.url }}"><img src="https://picsum.photos/20/20" alt=""></a></li>{# {{ social.icon }} #}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% if options.contact_email %}
+                <h6>contact</h6>
+                <p><a href="mailto:{{ options.contact_email }}">{{ options.contact_email }}</a></p>
+            {% endif %}
+            {% if options.contact_address %}
+                <h6>office address</h6>
+                <p>{{ options.contact_address }}</p>
+            {% endif %}
+
+        </div>
+        <div class="c-footer_nav"> 
+            {% set i = 1 %}
+            {% for menus in options.footer_menus %}
+                <div class="c-footer_nav_{{ i }}">
+                    <h6>{{ menus.menu_title }}</h6>
+                    <ul>
+                        {% for item in menus.menu_items %}
+                            <li><a href="{{ item.link.url }}">{{ item.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% set i = i + 1 %}
+            {% endfor %}
+        </div>
+        <div class="c-footer_form">
+            <h6>{{ options.subscriber_form_title }}</h6>
+            <p>{{ options.subscriber_form_copy }}</p>
+
+            <form action="">
+                <div>
+                    <label for="">First Name</label>
+                    <input type="text" name="fname">
+                </div>
+                <div>
+                    <label for="">Last Name</label>
+                    <input type="text" name="lname">
+                </div>
+                <div>
+                    <label for="">Email Address</label>
+                    <input type="email" name="email">
+                </div>
+                <div>
+                    <label for="">Mobile Number</label>
+                    <input type="text" name="number">
+                </div>
+                <div>
+                    <label for="">Message</label>
+                    <input type="text" name="message">
+                </div>
+                <span class="o-cta_submit">
+                    <input type="submit" value="subscribe to newsletter">
+                    <span></span>
+                </span>
+            </form>
+        </div>
+    </div>
+    <div class="c-footer_copy">
+        <p>{{ options.copyright|raw }}</p>
+    </div>
+</footer>

@@ -1,0 +1,33 @@
+.o-grid {
+
+    // Simple Grid - 12 columns in total only
+    // Desktop
+    &__col-0d {
+      display: none;
+    }
+  
+    @for $i from 1 through 12 {
+      &__col-#{$i}d {
+        flex-basis: calc((#{$i} * 100%) / 12) !important;
+      }
+    }
+
+
+    //
+// Media Queries
+//
+    @media (max-width: 768px) {
+
+      &__col-0m {
+        display: none;
+      }
+
+      @for $i from 1 through 12 {
+        &__col-#{$i}m {
+          flex-basis: calc((#{$i} * 100%) / 12) !important;
+        }
+      }
+
+    }
+
+}

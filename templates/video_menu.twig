@@ -1,0 +1,9 @@
+<div class="c-title-nav">
+    <h2 class="c-title-nav_heading">Video Gallery</h2>
+    <ul>
+        <li><a href="{{ site.url }}/niwi-videos">all videos</a></li>
+        {% for item in video_category %}
+            <li><a href="{{ site.url }}/{{ item.taxonomy }}/{{ item.slug }}">{{ item.name }}</a></li>
+        {% endfor %}
+    </ul>
+</div>

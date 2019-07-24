@@ -1,0 +1,25 @@
+{% extends "base.twig" %}
+
+{% block content %}
+	{% include "flexible.twig" %}
+    <section class="o-container">
+        {% include "article_menu.twig" %}
+        
+        {% for article in articles %}
+            {# {{ dump(article) }} #}
+            <div class="c-cards-article">
+                {% set image = function('get_the_post_thumbnail_url', article.ID) %}
+                <div class="c-cards_featured" style="background-image: url('{{ image }}');">
+                </div>
+                <div class="c-cards_info">
+                    <h6 class="c-card-article_date">{{ article.date }}</h6>
+                    <h4 class="c-card-article_title">{{ article.post_title }}</h4>
+                    <p>{{ article.excerpt }}</p>
+                    <a class="cta" href="{{ function('get_the_permalink', article.ID) }}">read more</a>
+                </div>
+            </div>
+        {% endfor %}
+        
+        {% include "article-pagination.twig" %}
+    </section>
+{% endblock %}

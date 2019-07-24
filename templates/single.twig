@@ -1,39 +1,91 @@
 {% extends "base.twig" %}
 
 {% block content %}
-	<div class="content-wrapper">
-		<article class="post-type-{{ post.post_type }}" id="post-{{ post.ID }}">
-			<img src="{{ post.thumbnail.src|resize(1200, 300) }}">
-			<section class="article-content">
-				<h1 class="article-h1">{{ post.title }}</h1>
-				<a href="{{ post.link }}">{{ _e('edit') }}</a>
-				<p class="blog-author">
-					<span>By</span><a href="{{post.author.path}}"> {{ post.author.name }} </a><span>&bull;</span> {{ post.date }}
-				</p>
-				<div class="article-body">
-					{{post.content}}
-				</div>
-			</section>
+	<section class="c-hero-post" style="background-image: url({{ function('get_field', 'hero_image').url ? function('get_field', 'hero_image').url : theme.link ~ '/src/images/default-hero.png' }});">
+		<div>
+			<h1>{{ post.post_title }}</h1>
+			<p class="author-date">By {{ post.author }} | {{ post.date }}</p>
+			<p>{{ function('get_field', 'hero_description') }}</p>
+		</div>
+	</section>
 
-			<!-- comment box -->
-			<section class="comment-box">
-				<!-- comments -->
-				<div class="comments">
-				    {% if post.comments %}
-					<h3> comments </h3>
-					{% for cmt in post.comments %}
-					    {% include "comment.twig" with {comment:cmt} %}
+	<section class="o-container c-post">
+		{% for flexible in flexible_post %}
+			{% if flexible['acf_fc_layout'] == 'paragraph' %}
+				<p>{{ flexible['content'] }}</p>
+			{% endif %}
+
+			{% if flexible['acf_fc_layout'] == 'image' %}
+				<div>
+					<img src="{{ flexible['image'].url }}" alt="" />
+				</div>
+			{% endif %}
+
+			{% if flexible['acf_fc_layout'] == 'embed' %}
+				<div class="post-embed">
+					{{ flexible['code'] }}
+				</div>
+			{% endif %}
+
+			{% if flexible['acf_fc_layout'] == 'gallery' %}
+				<div class="post-gallery">
+					{% for item in flexible['gallery'] %}
+						<a href="{{ item.url }}">
+							<img src="{{ item.url }}" alt="{{ item.name }}">
+						</a>
 					{% endfor %}
-				    {% endif %}
 				</div>
-
-				{% if post.comment_status == "closed" %}
-					<p> comments for this post are closed </p>
+			{% endif %}
+		{% endfor %}
+		<div class="prevnext">
+			<div class="prev">
+				{% if post.prev.link != '' %}
+					<a href="{{ post.prev.link }}">
+						<img src="{{ theme.link }}/src/images/single-prev-arrow.svg" alt="">
+						previous article
+					</a>
 				{% else %}
-				    <!-- comment form -->
-				    {% include "comment-form.twig" %}
+					<a href="{{ latest_post[0].link }}">
+						<img src="{{ theme.link }}/src/images/single-prev-arrow.svg" alt="">
+						previous article
+					</a>
 				{% endif %}
-			</section>
-		</article>
-	</div><!-- /content-wrapper -->
+			</div>
+			<div class="next">
+				{% if post.next.link != '' %}
+				<a href="{{ post.next.link }}">
+					next article
+					<img src="{{ theme.link }}/src/images/single-next-arrow.svg" alt="">
+				</a>
+				{% else %}
+					<a href="{{ first_post[0].link }}">
+						next article
+						<img src="{{ theme.link }}/src/images/single-next-arrow.svg" alt="">
+					</a>
+				{% endif %}
+			</div>
+		</div>
+	</section>
+
+	<section class="c-related_articles">
+		<div class="o-container">
+			<div class="c-title-nav">
+				<h2 class="c-title-nav_heading">Related Articles</h2>
+			</div>
+			<div class="c-three-cards">
+				{% for post in relatedposts %}
+				<div>
+					<img src="{{ post.thumbnail.src }}" alt="">
+					<div>
+						<h5 class="c-three-cards_date">{{ post.date }}</h5>
+						<h2 class="c-three-cards_title">{{ post.post_title }}</h2>
+						<p>{{ post.custom.excerpt }}</p>
+						<a class="cta" href="{{ post.path }}">Read More</a>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+    </section>
 {% endblock %}
+
