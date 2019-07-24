@@ -3,7 +3,7 @@
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 function enqueue_scripts() { 
     // jQuery
-    wp_register_script( 'jQuery', 'http://code.jquery.com/jquery-2.2.4.min.js', true, 1, 'all' );
+    wp_register_script( 'jQuery', 'http://code.jquery.com/jquery-2.2.4.min.js', null, false);
     wp_enqueue_script('jQuery');
 
     // GLIDE

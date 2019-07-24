@@ -11612,6 +11612,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__scripts_lity___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5__scripts_lity__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scripts_navigation__ = __webpack_require__(92);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__scripts_navigation___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6__scripts_navigation__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__scripts_contact_js__ = __webpack_require__(98);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__scripts_contact_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7__scripts_contact_js__);
+
 
 
 
@@ -21562,6 +21565,38 @@ document.querySelector('.c-nav_burger').addEventListener('click', function (even
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 94 */,
+/* 95 */,
+/* 96 */,
+/* 97 */,
+/* 98 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function($) {
+
+function selectChange() {
+    $('.email').remove();
+    $('.address').remove();
+
+    var email = $('select').find(':selected').data('email');
+    var address = $('select').find(':selected').data('address');
+
+    if (email != "") {
+        $(".info").append("<span class='email'>" + email + "</span>");
+    }
+    if (address != "") {
+        $(".info").append("<span class='address'>" + address + "</span>");
+    }
+}
+
+selectChange();
+
+$("select").change(function () {
+    selectChange();
+}).change();
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ })
 /******/ ]);

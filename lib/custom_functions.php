@@ -16,3 +16,14 @@ function custom_pre_get_posts( $query ) {
     }  
 } 
 add_action('pre_get_posts','custom_pre_get_posts'); 
+
+// Google Map KEY
+function my_acf_google_map_api( $api ){
+	
+	$api['key'] = 'AIzaSyAUpoZZnPexFOqYg5iC9itQXVcHYE_vDdQ';
+	
+	return $api;
+	
+}
+
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

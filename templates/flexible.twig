@@ -45,5 +45,8 @@
         {% if content.acf_fc_layout == 'custom_bar' %}
             {% include "flexible-content/custom-bar.twig" %}
         {% endif %}
+        {% if content.acf_fc_layout == 'contact_two_column' %}
+            {% include "flexible-content/contact-two-column.twig" %}
+        {% endif %}
     {% endfor %}
 {% endif %}
