@@ -2,8 +2,8 @@
 
 add_action( 'wp_enqueue_scripts', 'enqueue_scripts' );
 function enqueue_scripts() { 
-    // jQuery
-    wp_register_script( 'jQuery', 'http://code.jquery.com/jquery-2.2.4.min.js', null, null, true );
+    // jQuery declare on HEAD, set it to false to place it at the bottom
+    wp_register_script( 'jQuery', 'http://code.jquery.com/jquery-2.2.4.min.js', null, false);
     wp_enqueue_script('jQuery');
 
     // Compiled JS

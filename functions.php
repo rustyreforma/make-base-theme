@@ -145,6 +145,7 @@ class StarterSite extends Timber\Site {
 
 new StarterSite();
 
+require_once('lib/security_headers.php');
 require_once('lib/types.php');
 require_once('lib/enqueue.php');
 require_once('lib/custom_functions.php');
