@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "NiwiInternational",
-=======
-  "name": "MakeTechnology",
->>>>>>> 5c8e3a837f8b1206abf54f190737ea11caffa012
+  "name": "maketechnology",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
