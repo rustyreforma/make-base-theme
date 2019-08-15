@@ -53,3 +53,5 @@ function product_category() {
     }
     
 }
+
+?>

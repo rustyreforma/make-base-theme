@@ -1,6 +1,6 @@
 <section id="{{ content.id }}" class="c-two_columns_old {{ not content.column[0].background_image ? '[ u-df-fd-cr ]' : '' }}">
     {% for content in content.column %}
-        <div style="background-image: url('{{ content.background_image.url }}')">
+        <div class="{{ content.background_image.url ? 'banner_mobile_large' : '' }}" style="background-image: url('{{ content.background_image.url }}')">
             <h2>{{ content.title }}</h2>
             <div>
                 {{ content.content }}

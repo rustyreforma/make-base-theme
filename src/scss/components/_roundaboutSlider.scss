@@ -1,6 +1,10 @@
 .c-roundabout {
     position: relative;
     background: #008075;
+    background-image: url('../images/background-green-dark-big.png');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
     padding-bottom: 97px;
     padding-top: 773px;
     @include maxpoint(1156px) {
@@ -40,7 +44,7 @@
     position: relative;
     max-width: 1040px;
     > h5 {
-        font-size: 21px;
+        font-size: 19px;
         line-height: 25px;
         text-align: center;
         letter-spacing: 0.1em;
@@ -48,16 +52,24 @@
         margin-bottom: 6px;
         margin-top: 0;
         color: #FFFFFF;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: normal;
     }
     > h2 {
-        font-size: 67px;
-        line-height: 67px;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 100%;
         text-align: center;
         color: #FFFFFF;
         margin: 0 0 66px;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
         @include maxpoint ($desktop-md) {
             margin: 0 0 10px;
-        } 
+        }
+        @include maxpoint($desktop) {
+            font-size: 51px;
+        }
     }
     .right-arrow {
         position: absolute;

@@ -1,6 +1,10 @@
 .c-testimonials {
     position: relative;
     background: #A20005;
+    background-image: url('../images/background-red-orange.png');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
     padding-bottom: 97px;
     padding-top: 773px;
     @include maxpoint(1156px) {
@@ -23,32 +27,38 @@
             }
         }
         .c-testimonials_heading {
-            font-size: 18px;
-            line-height: 25px;
+            font-size: 21px;
+            line-height: 26px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: #FFFFFF;
-            font-weight: 600;
+            font-weight: 400;
             margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
             @include maxpoint($tablet) {
                 font-size: 21px;
                 line-height: 25px;
             }
         }
         .c-testimonials_subheading {
-            font-size: 27px;
-            line-height: 30px;
+            font-size: 34px;
+            line-height: 110%;
             color: #FFFFFF;
-            font-style: italic;
             margin-top: 8px;
             margin-bottom: 0;
-            @include maxpoint($tablet) {
-                font-size: 47px;
-                line-height: 40px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-weight: bold;
+            span {
+                display: block;
+                font-size: 35px;
+                line-height: 110%;
             }
             @include maxpoint($desktop) {
-                font-size: 67px;
-                line-height: 60px;
+                span {
+                    font-size: 50px;
+                }
             }
         }
         .glide-testimonials-wrapper {

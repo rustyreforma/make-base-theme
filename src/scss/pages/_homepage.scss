@@ -1,21 +1,27 @@
 .whatsnew {
     background: #FFB319;
+    background-image: url('../images/background-yellow-dark.png');
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
     padding: 0 52px;
     position: relative;
     z-index: 20;
     top: 422px;
     margin-top: -422px;
     > h2 {
-        font-size: 37px;
-        line-height: 40px;
         text-align: center;
         color: #FFFFFF;
         margin: 0;
         padding-top: 62px;
         padding-bottom: 64px;
-        @include maxpoint ($tablet) {
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 35px;
+        line-height: 100%;
+        font-family: 'Montserrat', sans-serif;
+        @include maxpoint($desktop) {
             font-size: 51px;
-            line-height: 51px;
         }
     }
     .c-three-cards {
@@ -30,6 +36,10 @@
         }
         .o-cta {
             margin: 48px auto 0;
+            left: -25px;
+            @include maxpoint($desktop) {
+                left: 0;
+            }
         }
     }
 }

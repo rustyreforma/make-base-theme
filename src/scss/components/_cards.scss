@@ -24,8 +24,10 @@
     }
     &:last-child {
         margin-bottom: 50px;
+        margin-top: 77px;
         @include maxpoint($tablet) {
             margin-bottom: 102px;
+            margin-top: 104px;
         }
     }
     > div {
@@ -50,20 +52,25 @@
             text-transform: uppercase;
             color: #000000;
             margin: 0;
+            font-family: 'Montserrat', sans-serif;
             @include maxpoint($tablet) {
                 font-size: 16px;
-                line-height: 19px;
+                line-height: 30px;
             }
         }
         .c-card_sub-title {
             font-size: 28px;
             line-height: 28px;
+            font-weight: bold;
             color: $green;
             margin-top: 0;
             margin-bottom: 24px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
             @include maxpoint($tablet) {
                 font-size: 38px;
-                line-height: 38px;
+                line-height: 100%;
+                max-width: 300px;
             }
         }
         p {
@@ -132,7 +139,23 @@
             @include maxpoint($tablet) {
                 left: -29px;
                 width: 80%;
+            }        
+            border-radius: 8px; 
+        }
+        &.ltb:before {
+            content: '';
+            width: 73%;
+            height: 121%;
+            background-color: #A20005;
+            position: absolute;
+            z-index: 1;
+            top: -20px;
+            left: 55px;
+            @include maxpoint($tablet) {
+                left: -23px;
+                width: 80%;
             }         
+            border-radius: 8px;
         }
         &.lb:after {
             content: '';
@@ -147,16 +170,44 @@
                 left: -29px;
                 width: 80%;
             }
+            border-radius: 8px;
+        }
+        &.lb:before {
+            content: '';
+            width: 70%;
+            height: 100%;
+            background: #E49B05;
+            position: absolute;
+            z-index: 1;
+            top: 37px;
+            left: 54px;
+            @include maxpoint($tablet) {
+                left: -40px;
+                width: 80%;
+            }
+            border-radius: 8px;
         }
         &.tr:after {
             content: '';
             width: 80%;
-            height: 100%;
+            height: 119%;
             // background-color: #FFB319;
             position: absolute;
             z-index: 1;
-            top: -37px;
-            left: 44px;
+            top: -21px;
+            left: -21px;
+            border-radius: 8px;
+        }
+        &.tr:before {
+            content: '';
+            width: 80%;
+            height: 119%;
+            background-color: #006459;
+            position: absolute;
+            z-index: 1;
+            top: -32px;
+            left: -35px;
+            border-radius: 8px;
         }
     }
     

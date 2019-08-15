@@ -3,13 +3,14 @@
     position: relative;
     margin-bottom: 18px;
     .o-container {
-        padding: 80px 0;
+        padding: 80px 0 0;
         position: relative;
         display: flex;
         justify-content: baseline;
         flex-direction: column;
         @include maxpoint($desktop) {
             flex-direction: row;
+            padding: 80px 0;
         }
         &:after {
             content: '.';
@@ -20,8 +21,10 @@
             top: 0;
             left: -39px;
             background: #F8F8F8;
+            opacity: 0;
             @include maxpoint($desktop) {
                 width: 345px;
+                opacity: 1;
             }
         }
     }
@@ -40,20 +43,29 @@
             padding-left: 0px;
         }
         h5 {
+            font-style: normal;
+            font-weight: 600;
             font-size: 21px;
-            line-height: 25px;
+            line-height: 26px;
             letter-spacing: 0.1em;
-            text-transform: uppercase;
             color: #000000;
             margin: 0 0 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
         }
         h2 {
-            font-size: 58px;
-            line-height: 55px;
             color: #006459;
             margin: 0;
-            font-style: italic;
             white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 35px;
+            line-height: 90%;
+            text-transform: uppercase;
+            @include maxpoint($desktop) {
+                font-size: 51px;
+            }
             @include maxpoint($desktop-md) {
                 font-size: 67px;
             }

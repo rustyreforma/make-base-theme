@@ -15,38 +15,53 @@
         {% if content.acf_fc_layout == 'news_and_testimonials' %}
             {% include "flexible-content/news-and-testimonials.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'news_and_products' %}
             {% include "flexible-content/news-and-products.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'two_columns' %}
             {% include "flexible-content/two-columns.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'video_banner' %}
             {% include "flexible-content/video-banner.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'lessons' %}
             {% include "flexible-content/lessons.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'two_columns_old_site' %}
             {% include "flexible-content/two-columns-old-site.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'full_page_banner' %}
             {% include "flexible-content/full-page-banner.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'two_column_with_image' %}
             {% include "flexible-content/two-columns-with-image.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'full_signage' %}
             {% include "flexible-content/full-signage.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'two_columns_members' %}
             {% include "flexible-content/two-columns-members.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'custom_bar' %}
             {% include "flexible-content/custom-bar.twig" %}
         {% endif %}
+
         {% if content.acf_fc_layout == 'contact_two_column' %}
             {% include "flexible-content/contact-two-column.twig" %}
+        {% endif %}
+        
+        {% if content.acf_fc_layout == 'form' %}
+            {% include "flexible-content/form.twig" %}
         {% endif %}
     {% endfor %}
 {% endif %}

@@ -6,6 +6,7 @@
   "dependencies": {
     "@glidejs/glide": "^3.3.0",
     "laravel-mix": "^2.1.11",
+    "scrollbooster": "^1.1.0",
     "simplebar": "^4.1.0",
     "simplelightbox": "^1.17.2",
     "slickjs": "^1.0.0"

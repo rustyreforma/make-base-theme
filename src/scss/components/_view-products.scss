@@ -28,22 +28,38 @@
             margin: 0;
         }
         h5 {
+            font-style: normal;
+            font-weight: 600;
             font-size: 21px;
-            line-height: 25px;
+            line-height: 26px;
             letter-spacing: 0.1em;
+            font-family: 'Montserrat', sans-serif;
             text-transform: uppercase;
             color: #000000;
             margin: 0 0 10px;
         }
         h2 {
-            font-size: 58px;
-            line-height: 55px;
             color: #006459;
             margin: 0;
-            font-style: italic;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 34px;
+            line-height: 90%;
+            text-transform: uppercase;
             max-width: 289px;
+            span {
+                display: block;
+                font-size: 34px;
+                line-height: 90%;
+                @include maxpoint($desktop) {
+                    font-size: 51px;
+                }
+                
+            }
             @include maxpoint($desktop-md) {
-                font-size: 67px;
+                font-size: 34px;
             }
         }
         p {
@@ -58,7 +74,7 @@
             }
         }
         .o-cta {
-            left: -25px;
+            //left: -25px;
             @include maxpoint($desktop) {
                 left: 0;
             }
@@ -197,6 +213,10 @@
             left: 116px;
             color: transparent;
             z-index: 10;
+            opacity: 0;
+            @include maxpoint($desktop) {
+                opacity: 1;
+            }
         }
     }
     &:after {
@@ -208,6 +228,10 @@
         right: 0;
         top: 0;
         background: #008075;
+        background-image: url('../images/background-green-dark.png');
+        background-size: cover;
+        background-position: top left;
+        background-repeat: no-repeat;
         position: absolute;
         color: transparent;
         @include maxpoint($desktop-md) {

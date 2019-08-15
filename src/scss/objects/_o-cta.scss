@@ -33,13 +33,14 @@
 }
 .o-cta_submit {
     position: relative;
+    display: inline-block;
     input {
         font-size: 16px;
         line-height: 19px;
         letter-spacing: 0.15em;
         text-transform: uppercase;
         padding: 14px 20px;
-        background-color: $yellow;
+        background-color: $yellow!important;
         color: #fff;
         position: relative;
         display: inline-block;
@@ -64,17 +65,17 @@
         top: 0;
         right: 0;
         cursor: pointer;
-        &:after {
-            content: '';
-            height: 47px;
-            width: 48px;
-            background-position: center center;
-            background-color: #E49B05;
-            background-image: url(../images/arrow.png);
-            background-repeat: no-repeat;
-            position: absolute;
-            right: -48px;
-            top: 0;
-        }
+    }
+    &:after {
+        content: '';
+        height: 47px;
+        width: 48px;
+        background-position: center center;
+        background-color: #E49B05;
+        background-image: url(../images/arrow.png);
+        background-repeat: no-repeat;
+        position: absolute;
+        right: -48px;
+        top: 0;
     }
 }
